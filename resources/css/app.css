@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@import './animations.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    --color-primary-50: #FFE4EE;
+    --color-primary-100: #F8C8DC;
+    --color-primary-500: #E0457B;
+    --color-primary-600: #C73867;
+}
+
+@layer utilities {
+    .glass-panel {
+        @apply bg-white/60 backdrop-blur-md border border-white/40 shadow-[0_4px_30px_rgba(224,69,123,0.1)];
+    }
+}
+
+@layer base {
+    html {
+        scrollbar-gutter: stable;
+    }
+    
+    html, .scroll-themed {
+        scrollbar-width: thin;
+        scrollbar-color: #F4A9C4 #FFF1F6;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #FFF1F6;
+        border-left: 1px solid #FFE4EE;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #F8C8DC, #F4A9C4);
+        border-radius: 999px;
+        border: 3px solid #FFF1F6;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #F4A9C4, #E0457B);
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background: #E0457B;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background: #FFF1F6;
+    }
+}
